@@ -1,2 +1,2 @@
 # wedding-invitation
-Tanushree's e-wedding invitaion
+Tanushree's e-wedding invitation
