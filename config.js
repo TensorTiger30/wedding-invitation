@@ -176,7 +176,7 @@ window.WEDDING_CONFIG = {
 
   music: {
   enabled: true,
-  src:"https://open.spotify.com/embed/track/6V8iKMIoHFT8vr9Gn1YiE4?utm_source=generator&si=a64c62dbb3984a85",
+  src:"assets/music.mp3",
   autoplay: true,
   loop: true,
   volume: 0.70,
