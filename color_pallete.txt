@@ -1,0 +1,222 @@
+BENGALI WEDDING E-CARD — RED THEME CATALOGUE
+================================================
+
+Purpose
+-------
+Keep this file as a backup catalogue of ready-to-use red-family themes.
+To switch themes, copy ONE complete `theme: { ... }` block below and replace
+the existing `theme` block inside your `config.js`.
+
+Recommended starting points:
+- Most traditional: Maroon + Antique Gold
+- Most premium: Burgundy Red
+- Most festive: Sindoor Red
+- Most balanced: Royal Bengali Red
+- Most romantic: Wine Red
+- Most dramatic: Crimson Red
+
+
+------------------------------------------------
+THEME 0 — CURRENT BASELINE
+------------------------------------------------
+theme: {
+  vermillion: "#8A1F21",
+  red: "#A62B2D",
+  deep: "#431416",
+  gold: "#B48A45",
+
+  cream: "#FFF8EA",
+  paper: "#F7EDDB",
+  ink: "#3E2B24",
+  muted: "#766159",
+
+  bodyTop: "#F4E7D1",
+  bodyMiddle: "#FFFAF0",
+  bodyBottom: "#F0E1C7",
+
+  heroBase: "#3B1715",
+  footerBackground: "#EAD8B8"
+},
+
+
+------------------------------------------------
+THEME 1 — ROYAL BENGALI RED
+Traditional • balanced • luxurious
+------------------------------------------------
+theme: {
+  vermillion: "#8F1D21",
+  red: "#B3262E",
+  deep: "#3A0D10",
+  gold: "#C8A15A",
+
+  cream: "#FFF8E8",
+  paper: "#F8EDD8",
+  ink: "#3E2924",
+  muted: "#7A6258",
+
+  bodyTop: "#F3DFC0",
+  bodyMiddle: "#FFFAF2",
+  bodyBottom: "#EAD1AA",
+
+  heroBase: "#31090B",
+  footerBackground: "#E6C993"
+},
+
+
+------------------------------------------------
+THEME 2 — SINDOOR RED
+Ceremonial • bright • festive
+------------------------------------------------
+theme: {
+  vermillion: "#B32025",
+  red: "#D13A3E",
+  deep: "#4A1114",
+  gold: "#D4AF66",
+
+  cream: "#FFF7E6",
+  paper: "#F9E9CF",
+  ink: "#442922",
+  muted: "#80665C",
+
+  bodyTop: "#F6D9B9",
+  bodyMiddle: "#FFF9EE",
+  bodyBottom: "#EEC89D",
+
+  heroBase: "#3B0C0F",
+  footerBackground: "#E9C98E"
+},
+
+
+------------------------------------------------
+THEME 3 — BURGUNDY RED
+Premium • elegant • modern
+------------------------------------------------
+theme: {
+  vermillion: "#7A1F2B",
+  red: "#9A2D3C",
+  deep: "#321015",
+  gold: "#C6A15B",
+
+  cream: "#FFF8EC",
+  paper: "#F3E8D8",
+  ink: "#3A2928",
+  muted: "#75605E",
+
+  bodyTop: "#EEDBC8",
+  bodyMiddle: "#FFF9F2",
+  bodyBottom: "#E4CAB4",
+
+  heroBase: "#270A10",
+  footerBackground: "#DCC29B"
+},
+
+
+------------------------------------------------
+THEME 4 — WINE RED
+Romantic • sophisticated • softer
+------------------------------------------------
+theme: {
+  vermillion: "#6E1B2B",
+  red: "#8B2940",
+  deep: "#2C0C14",
+  gold: "#D0AD6A",
+
+  cream: "#FFF8ED",
+  paper: "#F5EBDD",
+  ink: "#3C2A2B",
+  muted: "#786265",
+
+  bodyTop: "#ECD9CF",
+  bodyMiddle: "#FFF9F4",
+  bodyBottom: "#E1C7BC",
+
+  heroBase: "#240A10",
+  footerBackground: "#DDC6A5"
+},
+
+
+------------------------------------------------
+THEME 5 — MAROON + ANTIQUE GOLD
+Very traditional • Bengali • heritage
+------------------------------------------------
+theme: {
+  vermillion: "#7C1818",
+  red: "#A52A2A",
+  deep: "#2F0A0A",
+  gold: "#B68D4C",
+
+  cream: "#FFF6E6",
+  paper: "#F4E6CE",
+  ink: "#3A271F",
+  muted: "#746055",
+
+  bodyTop: "#EED8B5",
+  bodyMiddle: "#FFF9ED",
+  bodyBottom: "#DFC29A",
+
+  heroBase: "#260808",
+  footerBackground: "#D8B97E"
+},
+
+
+------------------------------------------------
+THEME 6 — CRIMSON RED
+Bold • dramatic • festive
+------------------------------------------------
+theme: {
+  vermillion: "#A11224",
+  red: "#C81F34",
+  deep: "#3A0810",
+  gold: "#D8B26E",
+
+  cream: "#FFF8E7",
+  paper: "#F8E8D3",
+  ink: "#402620",
+  muted: "#7A5E56",
+
+  bodyTop: "#F4D8B6",
+  bodyMiddle: "#FFF9EF",
+  bodyBottom: "#EBC398",
+
+  heroBase: "#30070C",
+  footerBackground: "#E6C183"
+},
+
+
+================================================
+QUICK SWITCH GUIDE
+================================================
+
+1. Open `config.js`.
+2. Find the existing block beginning with:
+
+   theme: {
+
+3. Replace that entire block with one theme from this catalogue.
+4. Save `config.js`.
+5. Refresh the wedding card in your browser.
+
+Example:
+
+Before:
+--------
+theme: {
+  vermillion: "#8A1F21",
+  ...
+},
+
+After:
+-------
+theme: {
+  vermillion: "#7A1F2B",
+  red: "#9A2D3C",
+  deep: "#321015",
+  gold: "#C6A15B",
+  ...
+},
+
+Tip:
+----
+If you make your own custom theme, copy it into this catalogue as a new
+numbered theme before experimenting further. This gives you an easy rollback
+point whenever you want to restore an earlier look.

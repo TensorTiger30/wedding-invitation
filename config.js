@@ -57,7 +57,7 @@ window.WEDDING_CONFIG = {
   theme: {
     vermillion: "#8a1f21",
     red: "#a62b2d",
-    deep: "#630207",
+    deep: "#431416",
     gold: "#b48a45",
     cream: "#fff8ea",
     paper: "#f7eddb",
@@ -83,7 +83,16 @@ window.WEDDING_CONFIG = {
     heroBackground: "assets/couple.jpeg",
     couplePhoto: "assets/couple.jpeg",
     heroPositionDesktop: "center 35%",
-    heroPositionMobile: "58% center"
+    heroPositionMobile: "58% center",
+
+    // Decorative icons displayed around the Om symbol on the prayer/mantra card.
+    prayerIcons: {
+      left: "assets/bengali_traditional_icon.png",
+      right: "assets/bengali_swastika.svg",
+      sizeDesktop: 46,
+      sizeMobile: 38,
+      opacity: 0.95
+    }
   },
 
   /*
