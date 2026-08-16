@@ -11,7 +11,7 @@ window.WEDDING_CONFIG = {
   family: {
     groomFather: "Shri. Subol Chandra Roy",
     groomMother: "Late Dr. Kabita Roy",
-    groomGrandFather: "Shri. Late Govardhan Roy",
+    groomGrandFather: "Late Shri. Govardhan Roy",
     groomGrandMother: "Late Smt. Sarojini Roy",
     brideFather: "Shri. Gautam Ghosh",
     brideMother: "Smt. Tusti Ghosh",
