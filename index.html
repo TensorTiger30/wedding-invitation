@@ -26,6 +26,7 @@
     body{margin:0;background:linear-gradient(180deg,var(--body-top) 0%,var(--body-middle) 55%,var(--body-bottom) 100%);color:var(--ink);font-family:"Cormorant Garamond",Georgia,serif;overflow-x:hidden}
     body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.16;background-image:radial-gradient(#8a1f21 .45px,transparent .45px);background-size:7px 7px;mix-blend-mode:multiply;z-index:50}
     .bn{font-family:"Noto Serif Bengali","Nirmala UI",serif}
+    .bn{font-family: "Noto Sans Devanagari", sans-serif;}
     .shell{width:min(1040px,100%);margin:auto;position:relative}
     .section{padding:76px 22px;position:relative}
     .eyebrow{letter-spacing:.18em;text-transform:uppercase;font-size:13px;color:var(--gold);font-weight:700}
@@ -91,7 +92,9 @@
     .mantra-om{font-size:54px;line-height:1;color:var(--vermillion);display:block;min-width:52px}
     .mantra-icon{width:46px;height:46px;object-fit:contain;display:block;opacity:.95;filter:drop-shadow(0 3px 6px rgba(61,24,18,.10))}
     .mantra-icon.traditional{border-radius:12px;mix-blend-mode:multiply}
-    .mantra-lines{font-size:23px;line-height:1.7;color:var(--vermillion);margin-bottom:25px}.mantra-lines.bn{font-size:21px}
+    .mantra-lines{font-size:23px;line-height:1.7;color:var(--vermillion);margin-bottom:25px}
+    .mantra-lines.bn{font-size:21px}
+    .mantra-lines.hn{font-size:21px}
     .mantra-note{font-size:16px;color:var(--vermillion);max-width:600px;margin:auto;line-height:1.55}
 
     .rsvp{text-align:center;padding-bottom:92px}
@@ -239,7 +242,7 @@
             <img id="prayerIconRight" class="mantra-icon" alt="" hidden />
           </div>
           <div id="mantraBn" class="mantra-lines bn"></div>
-          <div id="mantraEn" class="mantra-lines"></div>
+          <div id="mantraHn" class="mantra-lines hn"></div>
           <p class="mantra-note">May they be protected together, nourished together, and grow in strength and understanding together. May peace surround this union.</p>
         </div>
       </div>
@@ -456,7 +459,7 @@
     $('eventVenue').textContent = c.wedding.venue;
     $('eventAddress').textContent = c.wedding.address;
     $('mantraBn').innerHTML = c.mantra.bengali.join('<br>');
-    $('mantraEn').innerHTML = c.mantra.english.map(x => `<em>${x}</em>`).join('<br>');
+    $('mantraHn').innerHTML = c.mantra.hindi.map(x => `<em>${x}</em>`).join('<br>');
 
     // Prayer-card decorative icons. Change paths/sizes only in config.js.
     function applyPrayerIcons(){
