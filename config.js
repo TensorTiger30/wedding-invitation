@@ -87,8 +87,8 @@ window.WEDDING_CONFIG = {
 
     // Decorative icons displayed around the Om symbol on the prayer/mantra card.
     prayerIcons: {
-      left: "assets/bengali_traditional_icon.png",
-      right: "assets/bengali_swastika.svg",
+      left: "assets/traditional_icon.png",
+      right: "assets/swastika.svg",
       sizeDesktop: 46,
       sizeMobile: 38,
       opacity: 0.95
