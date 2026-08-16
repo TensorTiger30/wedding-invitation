@@ -9,7 +9,7 @@ window.WEDDING_CONFIG = {
   },
 
   family: {
-    groomFather: "Shri. Subol C. Roy",
+    groomFather: "Shri. Subol Chandra Roy",
     groomMother: "Late Dr. Kabita Roy",
     brideFather: "Shri. Gautam Ghosh",
     brideMother: "Smt. Tusti Ghosh",
@@ -33,9 +33,61 @@ window.WEDDING_CONFIG = {
   },
 
   rsvp: {
-    name: "Partho Ghosh",
-    relation: "Brother",
-    phone: "+919412563666", // Add country code, e.g. +91XXXXXXXXXX, to enable Call/WhatsApp RSVP.
+    // Add or remove names here. Only name + relation are displayed; no contact details.
+    people: [
+      {
+        name: "Partho Ghosh",
+        relation: "(Brother)",
+        phone: "+919412563666",
+      },
+      {
+        name: "Sushmita Dey",
+        relation: "(Sister)",
+        phone: "+91XXXXXXXXXX",
+      },
+      {
+        name: "Rishabh Dey",
+        relation: "(Brother)",
+        phone: "+91XXXXXXXXXX",
+      },
+      {
+        name: "Anupriya Ghosh",
+        relation: "(Sister)",
+        phone: "+91XXXXXXXXXX",
+      },
+      {
+        name: "Harshvardhan Ghosh",
+        relation: "(Brother)",
+        phone: "+91XXXXXXXXXX",
+      },
+      {
+        name: "Aditi Bhattacharya",
+        relation: "(Sister)",
+        phone: "+91XXXXXXXXXX",
+      },
+      {
+        name: "Aditya Bhattacharya",
+        relation: "(Brother)",
+        phone: "+91XXXXXXXXXX",
+      },
+      {
+        name: "Aakash Banerjee",
+        relation: "(Brother)",
+        phone: "+91XXXXXXXXXX",
+      },
+      {
+        name: "Neil Banerjee",
+        relation: "(Brother)",
+        phone: "+91XXXXXXXXXX",
+      },
+      {
+        name: "Aakash Basu",
+        relation: "(Brother)",
+        phone: "+91XXXXXXXXXX",
+      },
+    ],
+
+    message: "Kindly confirm your presence with the family.",
   },
 
   mantra: {
