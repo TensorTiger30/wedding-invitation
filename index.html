@@ -95,7 +95,7 @@
     .mantra-lines{font-size:23px;line-height:1.7;color:var(--vermillion);margin-bottom:25px}
     .mantra-lines.bn{font-size:21px}
     .mantra-lines.hn{font-size:21px}
-    .mantra-note{font-size:16px;color:var(--vermillion);max-width:600px;margin:auto;line-height:1.55}
+    .mantra-note{font-size:21px;color:var(--vermillion);max-width:600px;margin:auto;line-height:1.55;font-weight: bold}
 
     .rsvp{text-align:center;padding-bottom:92px}
     .rsvp-box{max-width:760px;margin:32px auto 0;padding:34px;border:1px solid rgba(180,138,69,.45);border-radius:22px;background:#fffaf0}
@@ -195,11 +195,15 @@
         <div class="family-grid">
           <div class="family-card">
             <p id="brideNm"></p>
-            <p>Grand Daughter of <p id="brideCorrName"></p></p>
+            <p>Grand Daughter of <p id="brideCorrGrandName"></p></p>
+            <p>&</p>
+            <p>Daughter of <p id="brideCorrName"></p></p>
           </div>
           <div class="weds-mark">✦</div>
           <div class="family-card">
             <p id="groomNm"></p>
+            <p>Grand Son of </p><p id="groomCorrGrandName"></p>
+            <p>&</p>
             <p>Son of <p id="groomCorrName"></p></p>
           </div>
         </div>
@@ -450,8 +454,10 @@
     $('brideName').textContent = c.couple.bride;
     $('introNames').textContent = `${c.family.brideMother} & ${c.family.brideFather}`;
     $('heroDate').textContent = `${c.wedding.day} · ${c.wedding.date} · ${c.wedding.time}`;
-    $('brideCorrName').textContent = `${c.family.brideGrandMother} & ${c.family.brideGrandFather}`;
+    $('brideCorrName').textContent = `${c.family.brideMother} & ${c.family.brideFather}`;
+    $('brideCorrGrandName').textContent = `${c.family.brideGrandMother} & ${c.family.brideGrandFather}`;
     $('groomCorrName').textContent = `${c.family.groomMother} & ${c.family.groomFather}`;
+    $('groomCorrGrandName').textContent = `${c.family.groomGrandMother} & ${c.family.groomGrandFather}`;
     $('groomNm').textContent = c.family.groom;
     $('brideNm').textContent = c.family.bride;
     $('dateBig').innerHTML = `${c.wedding.date}<span>${c.wedding.day}</span>`;
