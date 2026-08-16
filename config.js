@@ -173,4 +173,12 @@ window.WEDDING_CONFIG = {
 
   // Legacy fallback retained so older versions of index.html still work.
   photo: "assets/couple.jpeg",
+
+  music: {
+  enabled: true,
+  src:"https://open.spotify.com/embed/track/6V8iKMIoHFT8vr9Gn1YiE4?utm_source=generator&si=a64c62dbb3984a85",
+  autoplay: true,
+  loop: true,
+  volume: 0.70,
+  },
 };
