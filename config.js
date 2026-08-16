@@ -41,7 +41,27 @@ window.WEDDING_CONFIG = {
         phone: "+919412563666",
       },
       {
+        name: "Neil Banerjee",
+        relation: "(Brother)",
+        phone: "+91XXXXXXXXXX",
+      },
+      {
+        name: "Akash Banerjee",
+        relation: "(Brother)",
+        phone: "+91XXXXXXXXXX",
+      },
+      {
         name: "Sushmita Dey",
+        relation: "(Sister)",
+        phone: "+91XXXXXXXXXX",
+      },
+      {
+        name: "Aditi Bhattacharya",
+        relation: "(Sister)",
+        phone: "+91XXXXXXXXXX",
+      },
+      {
+        name: "Tanushree Sinha",
         relation: "(Sister)",
         phone: "+91XXXXXXXXXX",
       },
@@ -56,32 +76,17 @@ window.WEDDING_CONFIG = {
         phone: "+91XXXXXXXXXX",
       },
       {
-        name: "Harshvardhan Ghosh",
-        relation: "(Brother)",
-        phone: "+91XXXXXXXXXX",
-      },
-      {
-        name: "Aditi Bhattacharya",
-        relation: "(Sister)",
-        phone: "+91XXXXXXXXXX",
-      },
-      {
         name: "Aditya Bhattacharya",
         relation: "(Brother)",
         phone: "+91XXXXXXXXXX",
       },
       {
-        name: "Aakash Banerjee",
+        name: "Harshvardhan Ghosh",
         relation: "(Brother)",
         phone: "+91XXXXXXXXXX",
       },
       {
-        name: "Neil Banerjee",
-        relation: "(Brother)",
-        phone: "+91XXXXXXXXXX",
-      },
-      {
-        name: "Aakash Basu",
+        name: "Akash Basu",
         relation: "(Brother)",
         phone: "+91XXXXXXXXXX",
       },
@@ -175,10 +180,10 @@ window.WEDDING_CONFIG = {
   photo: "assets/couple.jpeg",
 
   music: {
-  enabled: true,
-  src:"assets/music.mp3",
-  autoplay: true,
-  loop: true,
-  volume: 0.70,
+    enabled: true,
+    src: "assets/music.mp3",
+    autoplay: true,
+    loop: true,
+    volume: 0.7,
   },
 };
