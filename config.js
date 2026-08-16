@@ -24,7 +24,7 @@ window.WEDDING_CONFIG = {
   rsvp: {
     name: "Partho Ghosh",
     relation: "Brother",
-    phone: "" // Add phone with country code, e.g. +91XXXXXXXXXX, to enable Call/WhatsApp RSVP.
+    phone: "+919412563666" // Add phone with country code, e.g. +91XXXXXXXXXX, to enable Call/WhatsApp RSVP.
   },
   mantra: {
     bengali: [
