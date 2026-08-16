@@ -1,31 +1,39 @@
 /**
  * EDIT THIS FILE to update the invitation.
- * Keep text inside quotes. Leave optional fields blank to hide their buttons/sections.
+ * Most visual/content changes should now be possible without editing index.html.
  */
 window.WEDDING_CONFIG = {
   couple: {
     groom: "Shubhojeet Roy",
     bride: "Tanushree Ghosh"
   },
+
   family: {
     groomFather: "Mr. Subol C. Roy",
     groomMother: "Late Dr. Kabita Roy",
     brideFather: "Mr. Gautam Ghosh",
     brideMother: "Mrs. Tusti Ghosh"
   },
+
   wedding: {
     isoDateTime: "2026-11-21T19:00:00+05:30",
     date: "21 November 2026",
     day: "Saturday",
     time: "7:00 PM onwards",
     venue: "Habib Garden",
-    address: "Marris Road, Civil Lines, Aligarh, Uttar Pradesh 202001"
+    address: "Marris Road, Civil Lines, Aligarh, Uttar Pradesh 202001",
+
+    // Optional: paste the exact Google Maps share URL here.
+    // Leave blank to automatically search Maps using venue + address.
+    mapUrl: ""
   },
+
   rsvp: {
     name: "Partho Ghosh",
     relation: "Brother",
-    phone: "+919412563666" // Add phone with country code, e.g. +91XXXXXXXXXX, to enable Call/WhatsApp RSVP.
+    phone: "+919412563666" // Add country code, e.g. +91XXXXXXXXXX, to enable Call/WhatsApp RSVP.
   },
+
   mantra: {
     bengali: [
       "ওঁ সহনাববতু সহ নৌ ভুনক্তু",
@@ -40,10 +48,62 @@ window.WEDDING_CONFIG = {
       "Om shanti shanti shanti."
     ]
   },
+
+  /*
+   * COLOR THEME
+   * Change only these hex values to restyle the invitation.
+   * The values below reproduce the current baseline design.
+   */
+  theme: {
+    vermillion: "#8a1f21",
+    red: "#a62b2d",
+    deep: "#630207",
+    gold: "#b48a45",
+    cream: "#fff8ea",
+    paper: "#f7eddb",
+    ink: "#3e2b24",
+    muted: "#766159",
+
+    bodyTop: "#f4e7d1",
+    bodyMiddle: "#fffaf0",
+    bodyBottom: "#f0e1c7",
+
+    heroBase: "#3b1715",
+    footerBackground: "#ead8b8"
+  },
+
+  /*
+   * IMAGE SETTINGS
+   * To change the opening image:
+   * 1. Put the new image inside the assets folder.
+   * 2. Change heroBackground below, e.g. "assets/my-background.jpg".
+   * Position values control how the image is cropped on desktop/mobile.
+   */
+  images: {
+    heroBackground: "assets/couple.jpeg",
+    couplePhoto: "assets/couple.jpeg",
+    heroPositionDesktop: "center 35%",
+    heroPositionMobile: "58% center"
+  },
+
+  /*
+   * HERO IMAGE DARKNESS
+   * 0 = transparent, 1 = fully dark.
+   * Increase heroOverlayBottom when text needs more contrast over a bright photo.
+   */
+  appearance: {
+    heroImageOpacity: 0.65,
+    heroOverlayTop: 0.10,
+    heroOverlayMiddle: 0.14,
+    heroOverlayBottom: 1
+  },
+
   share: {
     // After hosting, paste the public URL here for best WhatsApp/social sharing.
-    publicUrl: "https://tensortiger30.github.io/wedding-invitation/",
+    publicUrl: "",
     message: "You are warmly invited to the wedding of Shubhojeet Roy & Tanushree Ghosh on 21 November 2026 at Habib Garden, Aligarh."
   },
+
+  // Legacy fallback retained so older versions of index.html still work.
   photo: "assets/couple.jpeg"
 };

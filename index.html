@@ -11,13 +11,19 @@
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Noto+Serif+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
+      /* Fallback theme values. config.js can override these at runtime. */
       --vermillion:#8a1f21; --red:#a62b2d; --deep:#431416; --gold:#b48a45;
       --cream:#fff8ea; --paper:#f7eddb; --ink:#3e2b24; --muted:#766159;
+      --body-top:#f4e7d1; --body-middle:#fffaf0; --body-bottom:#f0e1c7;
+      --hero-base:#3b1715; --footer-bg:#ead8b8;
+      --hero-overlay-top:rgba(20,5,5,.10);
+      --hero-overlay-middle:rgba(33,7,8,.14);
+      --hero-overlay-bottom:rgba(30,5,6,.88);
       --shadow: 0 18px 60px rgba(61,24,18,.14);
     }
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
-    body{margin:0;background:linear-gradient(180deg,#f4e7d1 0%,#fffaf0 55%,#f0e1c7 100%);color:var(--ink);font-family:"Cormorant Garamond",Georgia,serif;overflow-x:hidden}
+    body{margin:0;background:linear-gradient(180deg,var(--body-top) 0%,var(--body-middle) 55%,var(--body-bottom) 100%);color:var(--ink);font-family:"Cormorant Garamond",Georgia,serif;overflow-x:hidden}
     body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.16;background-image:radial-gradient(#8a1f21 .45px,transparent .45px);background-size:7px 7px;mix-blend-mode:multiply;z-index:50}
     .bn{font-family:"Noto Serif Bengali","Nirmala UI",serif}
     .shell{width:min(1040px,100%);margin:auto;position:relative}
@@ -30,16 +36,16 @@
     .ornament:before,.ornament:after{content:"";width:90px;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}.ornament:after{transform:scaleX(-1)}
     .ornament span{font-size:21px}
 
-    .hero{min-height:100svh;display:grid;place-items:end center;position:relative;isolation:isolate;background:#3b1715;overflow:hidden}
+    .hero{min-height:100svh;display:grid;place-items:end center;position:relative;isolation:isolate;background:var(--hero-base);overflow:hidden}
     .hero-bg{position:absolute;inset:-4%;background-position:center 35%;background-size:cover;filter:saturate(.88) contrast(1.02);transform:scale(1.03);animation:kenburns 18s ease-in-out infinite alternate;z-index:-3}
-    .hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,5,5,.1) 0%,rgba(33,7,8,.14) 43%,rgba(30,5,6,.88) 100%);z-index:-2}
+    .hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,var(--hero-overlay-top) 0%,var(--hero-overlay-middle) 43%,var(--hero-overlay-bottom) 100%);z-index:-2}
     .hero:before{content:"";position:absolute;inset:18px;border:1px solid rgba(255,240,210,.65);border-radius:999px 999px 70px 70px/110px 110px 40px 40px;z-index:-1;pointer-events:none}
     @keyframes kenburns{from{transform:scale(1.03) translate3d(0,0,0)}to{transform:scale(1.11) translate3d(-1.5%,1%,0)}}
     .hero-copy{text-align:center;color:#fff7e8;padding:42px 20px 54px;width:100%;text-shadow:0 2px 18px rgba(0,0,0,.35)}
     .seal{width:108px;height:108px;border:1px solid rgba(255,239,203,.7);border-radius:50%;display:grid;place-items:center;margin:0 auto 16px;background:rgba(86,15,17,.25);backdrop-filter:blur(3px);font-size:27px;line-height:1.05;color:#fff1c8;animation:float 3.6s ease-in-out infinite}
     @keyframes float{50%{transform:translateY(-5px)}}
-    .hero .kicker{font-size:16px;letter-spacing:.16em;text-transform:uppercase;color:#efd6a3;margin-bottom:12px}
-    .names{font-size:clamp(49px,10vw,100px);line-height:.86;font-weight:600;letter-spacing:-.035em;margin:0}
+    .hero .kicker{font-size:20px;letter-spacing:.16em;text-transform:uppercase;color:#fff3d6;margin-bottom:12px}
+    .names{font-size:clamp(40px, 8vw, 80px);line-height:.86;font-weight:600;letter-spacing:-.035em;margin:0}
     .amp{font-size:.48em;font-style:italic;font-weight:400;color:#efd7a6;padding:0 .08em}
     .hero-date{font-size:20px;margin:18px 0 0;color:#fff3d6;letter-spacing:.04em}
     .scroll-cue{position:absolute;bottom:16px;right:22px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#ead8b5;writing-mode:vertical-rl;opacity:.8}
@@ -83,7 +89,7 @@
     .rsvp-name{font-size:34px;color:var(--vermillion);margin:0}.rsvp-rel{font-size:17px;color:var(--muted);margin:2px 0 18px}
     .closing{font-size:21px;line-height:1.6;max-width:760px;margin:32px auto 0;color:#5e443b}
     .closing.bn{font-size:19px;color:#7a2c2a}
-    footer{text-align:center;padding:22px;color:#755e53;font-size:13px;background:#ead8b8}
+    footer{text-align:center;padding:22px;color:#755e53;font-size:13px;background:var(--footer-bg)}
     .petal{position:fixed;top:-30px;width:12px;height:16px;border-radius:80% 15% 80% 15%;background:rgba(153,30,31,.36);pointer-events:none;z-index:60;animation:fall linear forwards}
     @keyframes fall{to{transform:translate3d(var(--drift),110vh,0) rotate(480deg);opacity:.1}}
     .reveal{opacity:0;transform:translateY(18px);transition:opacity .75s ease,transform .75s ease}.reveal.in{opacity:1;transform:none}
@@ -196,7 +202,51 @@
   <script>
     const c = window.WEDDING_CONFIG;
     const $ = id => document.getElementById(id);
-    $('heroBg').style.backgroundImage = `url('${c.photo}')`;
+
+    // Apply all visual configuration from config.js while keeping CSS fallbacks intact.
+    function applyTheme(){
+      if(!c.theme) return;
+      const root = document.documentElement;
+      const variables = {
+        vermillion:'--vermillion', red:'--red', deep:'--deep', gold:'--gold',
+        cream:'--cream', paper:'--paper', ink:'--ink', muted:'--muted',
+        bodyTop:'--body-top', bodyMiddle:'--body-middle', bodyBottom:'--body-bottom',
+        heroBase:'--hero-base', footerBackground:'--footer-bg'
+      };
+      Object.entries(variables).forEach(([key, cssVar]) => {
+        if(c.theme[key]) root.style.setProperty(cssVar, c.theme[key]);
+      });
+      if(c.theme.vermillion){
+        document.querySelector('meta[name="theme-color"]')?.setAttribute('content', c.theme.vermillion);
+      }
+    }
+
+    function applyAppearance(){
+      if(!c.appearance) return;
+      const root = document.documentElement;
+      const rgba = (rgb, alpha) => `rgba(${rgb},${alpha})`;
+      if(c.appearance.heroOverlayTop != null) root.style.setProperty('--hero-overlay-top', rgba('20,5,5', c.appearance.heroOverlayTop));
+      if(c.appearance.heroOverlayMiddle != null) root.style.setProperty('--hero-overlay-middle', rgba('33,7,8', c.appearance.heroOverlayMiddle));
+      if(c.appearance.heroOverlayBottom != null) root.style.setProperty('--hero-overlay-bottom', rgba('30,5,6', c.appearance.heroOverlayBottom));
+    }
+
+    applyTheme();
+    applyAppearance();
+
+    // Hero/opening image is controlled from config.js. c.photo is kept as a legacy fallback.
+    const heroBg = $('heroBg');
+    const heroImage = c.images?.heroBackground || c.photo;
+    if(heroImage) heroBg.style.backgroundImage = `url('${heroImage}')`;
+    heroBg.style.opacity = c.appearance?.heroImageOpacity ?? 1;
+
+    function updateHeroPosition(){
+      const mobile = window.matchMedia('(max-width:700px)').matches;
+      heroBg.style.backgroundPosition = mobile
+        ? (c.images?.heroPositionMobile || '58% center')
+        : (c.images?.heroPositionDesktop || 'center 35%');
+    }
+    updateHeroPosition();
+    window.addEventListener('resize', updateHeroPosition);
     $('groomName').textContent = c.couple.groom;
     $('brideName').textContent = c.couple.bride;
     $('introNames').textContent = `${c.couple.bride} & ${c.couple.groom}`;
@@ -215,7 +265,7 @@
     $('mantraEn').innerHTML = c.mantra.english.map(x => `<em>${x}</em>`).join('<br>');
 
     const locationQuery = encodeURIComponent(`${c.wedding.venue}, ${c.wedding.address}`);
-    $('mapBtn').href = `https://www.google.com/maps/search/?api=1&query=${locationQuery}`;
+    $('mapBtn').href = c.wedding.mapUrl || `https://www.google.com/maps/search/?api=1&query=${locationQuery}`;
 
     const cleanPhone = (c.rsvp.phone || '').replace(/[^+\d]/g,'');
     if(cleanPhone){
