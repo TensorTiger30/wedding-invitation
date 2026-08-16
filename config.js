@@ -103,10 +103,11 @@ window.WEDDING_CONFIG = {
       "ওঁ শান্তিঃ শান্তিঃ শান্তিঃ",
     ],
     english: [
-      "Om saha na vavatu, saha nau bhunaktu,",
-      "Saha viryam karavavahai,",
-      "Tejasvi navadhitamastu ma vidvishavahai.",
-      "Om shanti shanti shanti.",
+      "ॐ सह नाववतु ।",
+      "सह नौ भुनक्तु ।",
+      "सह वीर्यं करवावहै ।",
+      "तेजस्विनावधीतमस्तु मा विद्विषावहै ॥",
+      "ॐ शान्तिः शान्तिः शान्तिः ॥",
     ],
   },
 
