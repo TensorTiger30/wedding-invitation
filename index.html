@@ -60,9 +60,16 @@
     .family-card{border:1px solid rgba(180,138,69,.45);border-radius:18px;padding:30px 22px;background:rgba(255,255,255,.35);position:relative}
     .family-card:before{content:"✦";position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--paper);padding:0 10px;color:var(--gold)}
     .family-card h3{font-size:28px;color:var(--vermillion);margin-bottom:14px}
-    .family-card p{font-size:19px;margin:7px 0;line-height:1.3}
-    .family-card small{color:var(--muted);font-size:15px}
+    .family-card p{font-size:19px;margin:7px 0;line-height:1.3;color:var(--vermillion)}
+    .family-card small{color:var(--vermillion);font-size:15px}
     .weds-mark{align-self:center;color:var(--gold);font-size:34px}
+
+    #brideNm, #groomNm {
+        font-size: 26px;      /* Change this to make the text larger or smaller */
+        color: var(--vermillion);       /* Change this to your preferred color (e.g., your var(--hero-base)) */
+        font-weight: 1000;     /* Optional: Makes the names bold so they stand out */
+        margin-bottom: 2px;   /* Optional: Adjusts the spacing below the names */
+    }
 
     .details{text-align:center;background:var(--deep);color:#fff7e8;overflow:hidden}
     .details h2{color:#fff3dc}.details .sub{color:#e7d5bd}
@@ -84,15 +91,15 @@
     .mantra-om{font-size:54px;line-height:1;color:var(--vermillion);display:block;min-width:52px}
     .mantra-icon{width:46px;height:46px;object-fit:contain;display:block;opacity:.95;filter:drop-shadow(0 3px 6px rgba(61,24,18,.10))}
     .mantra-icon.traditional{border-radius:12px;mix-blend-mode:multiply}
-    .mantra-lines{font-size:23px;line-height:1.7;color:#5b2a27;margin-bottom:25px}.mantra-lines.bn{font-size:21px}
-    .mantra-note{font-size:16px;color:var(--muted);max-width:600px;margin:auto;line-height:1.55}
+    .mantra-lines{font-size:23px;line-height:1.7;color:var(--vermillion);margin-bottom:25px}.mantra-lines.bn{font-size:21px}
+    .mantra-note{font-size:16px;color:var(--vermillion);max-width:600px;margin:auto;line-height:1.55}
 
     .rsvp{text-align:center;padding-bottom:92px}
     .rsvp-box{max-width:760px;margin:32px auto 0;padding:34px;border:1px solid rgba(180,138,69,.45);border-radius:22px;background:#fffaf0}
     .rsvp-name{font-size:34px;color:var(--vermillion);margin:0}.rsvp-rel{font-size:17px;color:var(--muted);margin:2px 0 18px}
-    .closing{font-size:21px;line-height:1.6;max-width:760px;margin:32px auto 0;color:#5e443b}
+    .closing{font-size:21px;line-height:1.6;max-width:760px;margin:32px auto 0;color:#7a2c2a}
     .closing.bn{font-size:19px;color:#7a2c2a}
-    footer{text-align:center;padding:22px;color:#755e53;font-size:13px;background:var(--footer-bg)}
+    footer{text-align:center;padding:22px;color:#755e53;font-size:17px;background:var(--footer-bg)}
     .petal{position:fixed;top:-30px;width:12px;height:16px;border-radius:80% 15% 80% 15%;background:rgba(153,30,31,.36);pointer-events:none;z-index:60;animation:fall linear forwards}
     @keyframes fall{to{transform:translate3d(var(--drift),110vh,0) rotate(480deg);opacity:.1}}
     .reveal{opacity:0;transform:translateY(18px);transition:opacity .75s ease,transform .75s ease}.reveal.in{opacity:1;transform:none}
@@ -125,24 +132,21 @@
         <div class="eyebrow">With the blessings of our families</div>
         <div class="ornament"><span>❈</span></div>
         <h2>Two hearts, one auspicious beginning.</h2>
-        <p class="intro-copy">Together with their families, <strong id="introNames"></strong> joyfully invite you to share in the celebration of their wedding and bless them as they begin a new chapter together.</p>
-        <p class="intro-copy bn">দুই পরিবারের আশীর্বাদে এই শুভ বিবাহের আনন্দঘন মুহূর্তে আপনাদের সপরিবারে সাদর আমন্ত্রণ। আপনাদের উপস্থিতি ও আশীর্বাদ আমাদের এই শুভদিনকে পরিপূর্ণ করবে।</p>
-
+        <p class="intro-copy"><strong id="introNames"></strong> invite you to celebrate the wedding of their daughter.</p>
+        <p class="intro-copy bn">শ্রীমতী তুষ্টি ঘোষ ও শ্রী গৌতম ঘোষ তাঁদের কন্যার শুভ বিবাহ অনুষ্ঠানে আপনাদের সাদর আমন্ত্রণ জানাচ্ছেন।</p>
         <div class="family-grid">
           <div class="family-card">
-            <h3>Bride's Family</h3>
-            <small>Daughter of</small>
-            <p id="brideMother"></p> 
-            <p id="brideFather"></p>
+            <p id="brideNm"></p>
+            <p>Grand Daughter of <p id="brideCorrName"></p></p>
           </div>
           <div class="weds-mark">✦</div>
           <div class="family-card">
-            <h3>Groom's Family</h3>
-            <small>Son of</small>
-            <p id="groomMother"></p>
-            <p id="groomFather"></p>
+            <p id="groomNm"></p>
+            <p>Son of <p id="groomCorrName"></p></p>
           </div>
         </div>
+        <p class="intro-copy"> Please join our families in showering them with blessings as they embark on this wonderful new chapter.</p>
+        <p class="intro-copy bn">জীবনের এই সুন্দর নতুন পথচলায় তাদের আশীর্বাদ জানাতে, আমাদের পরিবারের সাথে আপনাদের উপস্থিতি আমরা একান্তভাবে কামনা করি।</p>
       </div>
     </section>
 
@@ -256,12 +260,12 @@
     window.addEventListener('resize', updateHeroPosition);
     $('groomName').textContent = c.couple.groom;
     $('brideName').textContent = c.couple.bride;
-    $('introNames').textContent = `${c.couple.bride} & ${c.couple.groom}`;
+    $('introNames').textContent = `${c.family.brideMother} & ${c.family.brideFather}`;
     $('heroDate').textContent = `${c.wedding.day} · ${c.wedding.date} · ${c.wedding.time}`;
-    $('groomFather').textContent = c.family.groomFather;
-    $('groomMother').textContent = c.family.groomMother;
-    $('brideFather').textContent = c.family.brideFather;
-    $('brideMother').textContent = c.family.brideMother;
+    $('brideCorrName').textContent = `${c.family.brideGrandMother} & ${c.family.brideGrandFather}`;
+    $('groomCorrName').textContent = `${c.family.groomMother} & ${c.family.groomFather}`;
+    $('groomNm').textContent = c.family.groom;
+    $('brideNm').textContent = c.family.bride;
     $('dateBig').innerHTML = `${c.wedding.date}<span>${c.wedding.day}</span>`;
     $('eventTime').textContent = c.wedding.time;
     $('eventVenue').textContent = c.wedding.venue;

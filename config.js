@@ -5,14 +5,18 @@
 window.WEDDING_CONFIG = {
   couple: {
     groom: "Shubhojeet Roy",
-    bride: "Tanushree Ghosh"
+    bride: "Tanushree Ghosh",
   },
 
   family: {
-    groomFather: "Mr. Subol C. Roy",
+    groomFather: "Shri. Subol C. Roy",
     groomMother: "Late Dr. Kabita Roy",
-    brideFather: "Mr. Gautam Ghosh",
-    brideMother: "Mrs. Tusti Ghosh"
+    brideFather: "Shri. Gautam Ghosh",
+    brideMother: "Smt. Tusti Ghosh",
+    brideGrandFather: "Late Shri. B.B. Ghosh",
+    brideGrandMother: "Late Smt. Reba Ghosh",
+    groom: "Shubhojeet Roy",
+    bride: "Tanushree Ghosh",
   },
 
   wedding: {
@@ -25,13 +29,13 @@ window.WEDDING_CONFIG = {
 
     // Optional: paste the exact Google Maps share URL here.
     // Leave blank to automatically search Maps using venue + address.
-    mapUrl: ""
+    mapUrl: "",
   },
 
   rsvp: {
     name: "Partho Ghosh",
     relation: "Brother",
-    phone: "+919412563666" // Add country code, e.g. +91XXXXXXXXXX, to enable Call/WhatsApp RSVP.
+    phone: "+919412563666", // Add country code, e.g. +91XXXXXXXXXX, to enable Call/WhatsApp RSVP.
   },
 
   mantra: {
@@ -39,14 +43,14 @@ window.WEDDING_CONFIG = {
       "ওঁ সহনাববতু সহ নৌ ভুনক্তু",
       "সহ বীর্যং করবাবহৈ",
       "তেজস্বিনাবধীতমস্তু মা বিদ্বিষাবহৈ",
-      "ওঁ শান্তিঃ শান্তিঃ শান্তিঃ"
+      "ওঁ শান্তিঃ শান্তিঃ শান্তিঃ",
     ],
     english: [
       "Om saha na vavatu, saha nau bhunaktu,",
       "Saha viryam karavavahai,",
       "Tejasvi navadhitamastu ma vidvishavahai.",
-      "Om shanti shanti shanti."
-    ]
+      "Om shanti shanti shanti.",
+    ],
   },
 
   /*
@@ -69,7 +73,7 @@ window.WEDDING_CONFIG = {
     bodyBottom: "#f0e1c7",
 
     heroBase: "#3b1715",
-    footerBackground: "#ead8b8"
+    footerBackground: "#ead8b8",
   },
 
   /*
@@ -91,8 +95,8 @@ window.WEDDING_CONFIG = {
       right: "assets/swastika.svg",
       sizeDesktop: 46,
       sizeMobile: 38,
-      opacity: 0.95
-    }
+      opacity: 0.95,
+    },
   },
 
   /*
@@ -102,17 +106,18 @@ window.WEDDING_CONFIG = {
    */
   appearance: {
     heroImageOpacity: 0.65,
-    heroOverlayTop: 0.10,
+    heroOverlayTop: 0.1,
     heroOverlayMiddle: 0.14,
-    heroOverlayBottom: 1
+    heroOverlayBottom: 1,
   },
 
   share: {
     // After hosting, paste the public URL here for best WhatsApp/social sharing.
     publicUrl: "",
-    message: "You are warmly invited to the wedding of Shubhojeet Roy & Tanushree Ghosh on 21 November 2026 at Habib Garden, Aligarh."
+    message:
+      "You are warmly invited to the wedding of Shubhojeet Roy & Tanushree Ghosh on 21 November 2026 at Habib Garden, Aligarh.",
   },
 
   // Legacy fallback retained so older versions of index.html still work.
-  photo: "assets/couple.jpeg"
+  photo: "assets/couple.jpeg",
 };
