@@ -138,8 +138,9 @@ window.WEDDING_CONFIG = {
   images: {
     heroBackground: "assets/couple.jpeg",
     couplePhoto: "assets/couple.jpeg",
-    heroPositionDesktop: "center 35%",
-    heroPositionMobile: "58% center",
+    // Same focal point on all screen sizes
+    heroPositionDesktop: "50% 35%",
+    heroPositionMobile: "50% 35%",
 
     // Decorative icons displayed around the Om symbol on the prayer/mantra card.
     prayerIcons: {
