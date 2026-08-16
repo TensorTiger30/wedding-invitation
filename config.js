@@ -136,8 +136,8 @@ window.WEDDING_CONFIG = {
    * Position values control how the image is cropped on desktop/mobile.
    */
   images: {
-    heroBackground: "assets/couple.jpeg",
-    couplePhoto: "assets/couple.jpeg",
+    heroBackground: "assets/couple_image_new.jpeg",
+    couplePhoto: "assets/couple_image_new.jpeg",
     // Same focal point on all screen sizes
     heroPositionDesktop: "50% 35%",
     heroPositionMobile: "50% 35%",
