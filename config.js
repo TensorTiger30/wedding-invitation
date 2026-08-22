@@ -68,7 +68,7 @@ window.WEDDING_CONFIG = {
         phone: "+91XXXXXXXXXX",
       },
       {
-        name: "Rishabh Dey",
+        name: "Hrishabh Dey",
         relation: "(Brother)",
         phone: "+91XXXXXXXXXX",
       },
