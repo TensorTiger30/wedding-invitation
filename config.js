@@ -92,6 +92,21 @@ window.WEDDING_CONFIG = {
         relation: "(Brother)",
         phone: "+91XXXXXXXXXX",
       },
+      {
+        name: "Indroneel Roy",
+        relation: "(Brother)",
+        phone: "+91XXXXXXXXXX",
+      },
+      {
+        name: "Aditya Ghosh",
+        relation: "(Brother)",
+        phone: "+91XXXXXXXXXX",
+      },
+      {
+        name: "Mira Ghosh",
+        relation: "(Sister)",
+        phone: "+91XXXXXXXXXX",
+      },
     ],
 
     message: "Kindly confirm your presence with the family.",
