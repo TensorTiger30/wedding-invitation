@@ -222,6 +222,7 @@
     @keyframes musicPulse{50%{transform:scale(1.06)}}
 
     .share-fab{position:fixed;right:max(16px,env(safe-area-inset-right));bottom:max(16px,env(safe-area-inset-bottom));z-index:80;background:rgba(123,48,68,.68);color:#fff4e2;border:1px solid rgba(255,231,211,.3);box-shadow:0 10px 30px rgba(74,28,42,.18);opacity:.68;transition:opacity .2s ease,transform .2s ease}
+    .share-fab b{font-size:18px;line-height:1}
     .share-fab:hover,.share-fab:focus-visible{opacity:.92}
     .toast{position:fixed;bottom:82px;left:50%;transform:translate(-50%,20px);background:#2d1d19;color:#fff5e8;border-radius:999px;padding:11px 16px;opacity:0;pointer-events:none;transition:.25s;z-index:90;font-size:14px}.toast.show{opacity:1;transform:translate(-50%,0)}
     @media (max-width:700px){
@@ -230,10 +231,10 @@
       .section{padding:62px 18px}.hero{min-height:100%}.hero:before{inset:10px;border-radius:180px 180px 36px 36px/90px 90px 30px 30px}
       .envelope-intro{padding:clamp(10px,3vh,30px) 14px 16px}.envelope-wrap{width:min(94vw,max(240px,calc((100dvh - 260px) * 1.55)));max-height:100%;margin-top:clamp(8px,2vh,16px)}.envelope-letter{padding:18px 8px}.envelope-letter strong{font-size:clamp(21px,5vw,28px)}.envelope-seal{top:72%}.envelope-intro p{font-size:clamp(16px,2.5vh,18px)}
       .hero-bg{background-position:58% center}.family-grid{grid-template-columns:1fr;gap:22px}.weds-mark{transform:rotate(90deg);height:18px;line-height:18px}
-      .event-grid{grid-template-columns:1fr}.event-item{padding:13px}.detail-card{padding:28px 18px}.mantra-card{margin-top:42px;padding:52px 18px 30px;border-radius:90px 90px 22px 22px}.mantra-symbol-row{top:-30px;gap:10px;padding:4px 12px}.mantra-om{font-size:46px;min-width:44px}.mantra-icon{width:38px;height:38px}.share-fab span{display:none}
-      .page-nav{bottom:max(66px,calc(env(safe-area-inset-bottom) + 58px));gap:7px}
+      .event-grid{grid-template-columns:1fr}.event-item{padding:13px}.detail-card{padding:28px 18px}.mantra-card{margin-top:42px;padding:52px 18px 30px;border-radius:90px 90px 22px 22px}.mantra-symbol-row{top:-30px;gap:10px;padding:4px 12px}.mantra-om{font-size:46px;min-width:44px}.mantra-icon{width:38px;height:38px}.share-fab span{display:none}.share-fab b{font-size:19px}
+      .page-nav{bottom:max(14px,env(safe-area-inset-bottom));gap:7px}
       .music-fab,.share-fab{bottom:max(14px,env(safe-area-inset-bottom));width:42px;height:42px}
-      .music-fab{left:max(12px,env(safe-area-inset-left))}.share-fab{right:max(12px,env(safe-area-inset-right));padding:0}
+      .music-fab{left:max(12px,env(safe-area-inset-left))}.share-fab{right:max(12px,env(safe-area-inset-right));padding:0;justify-content:center}
     }
     @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}.page{opacity:0;transform:none}.page.active{opacity:1}}
   </style>
@@ -364,7 +365,7 @@
   <audio id="weddingMusic" preload="auto"></audio>
   <button id="musicBtn" class="music-fab" type="button" aria-label="Play wedding music" title="Play wedding music">♪</button>
 
-  <button id="shareBtn" class="share-fab"><b>↗</b><span>Share Invitation</span></button>
+  <button id="shareBtn" class="share-fab" type="button" aria-label="Share invitation" title="Share invitation"><b aria-hidden="true">↗</b><span>Share</span></button>
   <div id="toast" class="toast">Link copied</div>
 
   <script src="config.js"></script>
