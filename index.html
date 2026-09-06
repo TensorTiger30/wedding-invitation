@@ -81,7 +81,7 @@
     .envelope:before{left:0;transform:rotate(32deg);transform-origin:left bottom}
     .envelope:after{right:0;transform:rotate(-32deg);transform-origin:right bottom}
     .envelope-letter{position:absolute;left:12%;right:12%;bottom:8%;height:78%;padding:24px 12px;background:linear-gradient(180deg,#fffaf4,#f8e7df);border:1px solid rgba(126,67,72,.4);box-shadow:0 3px 12px rgba(74,28,42,.16),inset 0 0 0 5px rgba(180,138,69,.1);z-index:1}
-    .envelope-letter strong{display:block;font-size:clamp(23px,5vw,34px);font-weight:600;color:#742837}
+    .envelope-letter strong{display:block;font-size:clamp(23px,5vw,34px);font-weight:600;color:#742837;opacity:0;visibility:hidden}
     .envelope-letter span{font-size:15px;letter-spacing:.16em;text-transform:uppercase;color:#9c784a}
     .envelope-flap{position:absolute;inset:0 0 auto;height:64%;background:linear-gradient(155deg,#eed6c8 0%,#d7a5a0 58%,#754258 100%);clip-path:polygon(0 0,100% 0,50% 100%);border-bottom:1px solid rgba(74,28,42,.46);filter:drop-shadow(0 3px 3px rgba(74,28,42,.16));transform-origin:top center;z-index:3}
     .envelope-seal{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:clamp(76px,9vw,112px);height:clamp(76px,9vw,112px);padding:0;border:0;background:radial-gradient(ellipse at 30% 14%,rgba(255,244,231,.72) 0 3%,rgba(255,208,198,.45) 7%,transparent 23%),radial-gradient(ellipse at 72% 88%,rgba(54,5,11,.48) 0 7%,transparent 28%),radial-gradient(circle at 44% 43%,#bd3b36 0 29%,#9b2528 58%,#68131b 86%,#3b0b13 100%);color:#fff4e2;filter:drop-shadow(0 8px 4px rgba(61,24,18,.26)) drop-shadow(0 2px 1px rgba(45,4,10,.38));clip-path:polygon(50% 0%,58% 3%,65% 1%,72% 5%,79% 4%,84% 10%,91% 11%,92% 18%,98% 23%,96% 31%,100% 38%,97% 46%,100% 53%,96% 61%,98% 69%,92% 75%,91% 83%,84% 85%,79% 92%,71% 91%,64% 97%,56% 94%,49% 100%,42% 95%,34% 98%,28% 93%,20% 94%,17% 86%,10% 83%,10% 75%,3% 69%,5% 61%,0% 53%,4% 45%,1% 37%,6% 30%,3% 22%,10% 17%,11% 10%,19% 9%,25% 4%,33% 5%,40% 1%);font-family:"Noto Serif Bengali","Nirmala UI",serif;font-size:clamp(32px,4.2vw,44px);line-height:1;justify-content:center;gap:0;text-shadow:1px 1px 0 rgba(74,8,14,.72),-1px -1px 0 rgba(255,220,208,.72),0 2px 4px rgba(48,4,10,.36);z-index:4;overflow:hidden}
@@ -91,8 +91,11 @@
     .envelope-seal:hover,.envelope-seal:focus-visible{transform:translate(-50%,-50%) scale(1.06);outline:2px solid rgba(180,138,69,.72);outline-offset:5px}
     @keyframes sealPulse{50%{filter:drop-shadow(0 11px 7px rgba(61,24,18,.34)) drop-shadow(0 0 10px rgba(180,138,69,.32))}}
     .envelope-hint{margin:clamp(8px,1.5vh,24px) 0 0!important;font-size:clamp(11px,1.8vh,14px)!important;letter-spacing:.15em;text-transform:uppercase;color:var(--gold)!important}
-    .page.active .envelope-flap{animation:envelopeOpen 1.2s .65s cubic-bezier(.2,.7,.2,1) forwards}
-    @keyframes envelopeOpen{to{transform:rotateX(90deg);opacity:.12;z-index:0}}
+    .envelope-page.is-opening .envelope-flap{animation:envelopeOpen .7s cubic-bezier(.2,.7,.2,1) forwards}
+    .envelope-page.is-opening .envelope-letter{animation:letterReveal .8s .18s cubic-bezier(.2,.7,.2,1) forwards}
+    .envelope-page.is-opening .envelope-seal{animation:none;opacity:0;pointer-events:none}
+    @keyframes envelopeOpen{to{transform:rotateX(112deg);opacity:.08;z-index:0}}
+    @keyframes letterReveal{from{transform:translateY(8%);opacity:.82}to{transform:translateY(-3%);opacity:1}}
 
     .hero{min-height:100svh;display:grid;place-items:end center;position:relative;isolation:isolate;background:var(--hero-base);overflow:hidden}
     .hero-bg{position:absolute;inset:-4%;background-position:center 35%;background-size:cover;filter:saturate(.88) contrast(1.02);transform:scale(1.03);animation:kenburns 18s ease-in-out infinite alternate;z-index:-3}
@@ -675,6 +678,10 @@
       pages.forEach((page, pageIndex) => {
         page.classList.toggle('active', pageIndex === currentPage);
         page.classList.remove('previous');
+        if(pageIndex === 0 && currentPage !== 0){
+          page.classList.remove('is-opening');
+          $('openInvitation').disabled = false;
+        }
         if(pageIndex === currentPage) page.scrollTop = 0;
         page.querySelectorAll('.reveal').forEach(reveal => reveal.classList.toggle('in', pageIndex === currentPage));
       });
@@ -688,8 +695,9 @@
       clearTimeout(pageTimer);
       if(isPagePaused || currentPage === pages.length - 1 || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
       pageTimer = setTimeout(async () => {
-        if(window.startWeddingMusic) await window.startWeddingMusic();
-        showPage(currentPage + 1);
+        if(window.startWeddingMusic) window.startWeddingMusic();
+        if(currentPage === 0) openEnvelope();
+        else showPage(currentPage + 1);
       }, pageDelay);
     }
 
@@ -708,10 +716,17 @@
       showPage(currentPage + (distance < 0 ? 1 : -1), distance < 0 ? 1 : -1);
     }, { passive: true });
 
-    $('openInvitation').addEventListener('click', async () => {
-      if(window.startWeddingMusic) await window.startWeddingMusic();
-      showPage(1);
-    });
+    async function openEnvelope(){
+      const envelopePage = document.querySelector('.envelope-page');
+      const openButton = $('openInvitation');
+      if(envelopePage.classList.contains('is-opening')) return;
+      envelopePage.classList.add('is-opening');
+      openButton.disabled = true;
+      if(window.startWeddingMusic) window.startWeddingMusic();
+      setTimeout(() => showPage(1), matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 850);
+    }
+
+    $('openInvitation').addEventListener('click', openEnvelope);
     showPage(0);
 
     // Gentle falling petals; disabled for reduced-motion users.
