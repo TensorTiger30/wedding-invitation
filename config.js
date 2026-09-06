@@ -189,7 +189,7 @@ window.WEDDING_CONFIG = {
 
   share: {
     // After hosting, paste the public URL here for best WhatsApp/social sharing.
-    publicUrl: "",
+    publicUrl: "https://tensortiger30.github.io/wedding-invitation/",
     message:
       "You are warmly invited to the wedding of Shubhojeet Roy & Tanushree Ghosh on 21 November 2026 at Habib Garden, Aligarh.",
   },
