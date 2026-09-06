@@ -105,6 +105,7 @@
 
     .paper{background:linear-gradient(180deg,rgba(255,250,238,.98),rgba(247,237,219,.98));box-shadow:var(--shadow)}
     .intro{text-align:center;overflow:hidden}
+    #app > .page.intro,#app > .page.details{overflow-x:hidden;overflow-y:auto;-webkit-overflow-scrolling:touch;touch-action:pan-y}
     .alpana{position:absolute;width:260px;height:260px;opacity:.09;color:var(--vermillion);pointer-events:none}.alpana.a{left:-95px;top:-70px}.alpana.b{right:-95px;bottom:-70px;transform:rotate(180deg)}
     .intro-copy{max-width:760px;margin:auto;font-size:24px;line-height:1.55;color:#6f2a27}
     .intro-copy.bn{font-size:20px;color:#6f2a27;margin-top:14px}
@@ -217,7 +218,7 @@
       .music-entry-cue{font-size:11px;bottom:14px;padding:8px 12px}
       .seal{top:-60px}
       .section{padding:62px 18px}.hero{min-height:100%}.hero:before{inset:10px;border-radius:180px 180px 36px 36px/90px 90px 30px 30px}
-      .envelope-intro{padding:clamp(10px,3vh,30px) 14px 16px}.envelope-wrap{width:min(94vw,max(240px,calc((100dvh - 260px) * 1.55)));max-height:100%;margin-top:clamp(8px,2vh,16px)}.envelope-letter{padding:18px 8px}.envelope-intro p{font-size:clamp(16px,2.5vh,18px)}
+      .envelope-intro{padding:clamp(10px,3vh,30px) 14px 16px}.envelope-wrap{width:min(94vw,max(240px,calc((100dvh - 260px) * 1.55)));max-height:100%;margin-top:clamp(8px,2vh,16px)}.envelope-letter{padding:18px 8px}.envelope-letter strong{font-size:clamp(21px,5vw,28px)}.envelope-seal{top:72%}.envelope-intro p{font-size:clamp(16px,2.5vh,18px)}
       .hero-bg{background-position:58% center}.family-grid{grid-template-columns:1fr;gap:22px}.weds-mark{transform:rotate(90deg);height:18px;line-height:18px}
       .event-grid{grid-template-columns:1fr}.event-item{padding:13px}.detail-card{padding:28px 18px}.mantra-card{margin-top:42px;padding:52px 18px 30px;border-radius:90px 90px 22px 22px}.mantra-symbol-row{top:-30px;gap:10px;padding:4px 12px}.mantra-om{font-size:46px;min-width:44px}.mantra-icon{width:38px;height:38px}.share-fab span{display:none}
     }
