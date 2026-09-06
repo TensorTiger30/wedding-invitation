@@ -39,12 +39,23 @@
       --shadow: 0 18px 60px rgba(61,24,18,.14);
     }
     *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;background:linear-gradient(180deg,var(--body-top) 0%,var(--body-middle) 55%,var(--body-bottom) 100%);color:var(--ink);font-family:"Cormorant Garamond",Georgia,serif;overflow-x:hidden}
+    html{scroll-behavior:smooth;height:100%;overflow:hidden}
+    body{margin:0;height:100%;background:linear-gradient(180deg,var(--body-top) 0%,var(--body-middle) 55%,var(--body-bottom) 100%);color:var(--ink);font-family:"Cormorant Garamond",Georgia,serif;overflow:hidden}
     body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.16;background-image:radial-gradient(#8a1f21 .45px,transparent .45px);background-size:7px 7px;mix-blend-mode:multiply;z-index:50}
     .bn{font-family:"Noto Serif Bengali","Nirmala UI",serif}
     .hn{font-family: "Noto Sans Devanagari", sans-serif;}
     .shell{width:min(1040px,100%);margin:auto;position:relative}
+    .invitation-stage{height:100svh;position:relative;isolation:isolate;perspective:1800px}
+    .page{position:absolute;inset:0;height:100%;overflow-y:auto;overflow-x:hidden;overscroll-behavior:contain;opacity:0;visibility:hidden;transform:rotateY(-12deg) translateX(4%);transform-origin:left center;transition:opacity .7s ease,transform .8s cubic-bezier(.2,.7,.2,1),visibility 0s linear .8s;z-index:0}
+    .page.active{opacity:1;visibility:visible;transform:none;z-index:1;transition-delay:0s}
+    .envelope-page.active{transform:none;transform-origin:center center}
+    .page.previous{transform:rotateY(12deg) translateX(-4%);transform-origin:right center}
+    .page-nav{position:fixed;left:50%;bottom:max(12px,env(safe-area-inset-bottom));transform:translateX(-50%);z-index:75;display:flex;align-items:center;gap:8px;padding:5px 8px;border:1px solid rgba(255,239,203,.24);border-radius:999px;background:rgba(67,20,22,.52);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);box-shadow:0 6px 18px rgba(61,24,18,.12)}
+    .page-nav button{width:27px;height:27px;padding:0;border:1px solid rgba(255,239,203,.28);background:transparent;color:#fff3d6;font-size:17px;line-height:1}
+    .page-nav button:disabled{opacity:.35;cursor:default;transform:none}
+    .page-dots{display:flex;gap:5px;align-items:center}
+    .page-dot{width:5px;height:5px;border:0;border-radius:50%;padding:0;background:rgba(255,239,203,.4);cursor:pointer}
+    .page-dot.active{width:16px;border-radius:999px;background:#f4dca8}
     .section{padding:76px 22px;position:relative}
     .eyebrow{letter-spacing:.18em;text-transform:uppercase;font-size:13px;color:var(--gold);font-weight:700}
     h1,h2,h3,p{margin-top:0}
@@ -53,6 +64,30 @@
     .ornament{display:flex;align-items:center;justify-content:center;gap:14px;margin:18px auto 28px;color:var(--gold)}
     .ornament:before,.ornament:after{content:"";width:90px;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}.ornament:after{transform:scaleX(-1)}
     .ornament span{font-size:21px}
+
+    .envelope-page{display:block;text-align:center;overflow:hidden;background:radial-gradient(ellipse at 50% 28%,rgba(255,250,244,.95) 0 24%,transparent 63%),radial-gradient(ellipse at 50% 100%,rgba(74,28,42,.16),transparent 48%),linear-gradient(145deg,#ead5cc 0%,#f8eee5 52%,#dfc0bc 100%);color:#6b2633}
+    .envelope-intro{width:100%;height:100%;display:grid;grid-template-rows:auto auto auto auto auto;align-content:start;justify-items:center;overflow:hidden;padding:clamp(12px,4vh,42px) 18px 20px}
+    .envelope-intro > .eyebrow,.envelope-intro > h1,.envelope-intro > p:first-of-type{position:relative;z-index:6}
+    .envelope-intro h1{font-size:clamp(30px,min(7vw,6vh),58px);font-weight:600;line-height:.95;margin:clamp(8px,1.5vh,14px) 0 clamp(5px,1vh,8px)}
+    .envelope-intro p{font-size:clamp(16px,2.6vh,20px);color:var(--muted);margin-bottom:clamp(8px,2vh,18px)}
+    .envelope-wrap{width:min(900px,88vw,max(260px,calc((100dvh - 300px) * 1.55)));max-height:100%;align-self:center;margin:clamp(8px,2vh,24px) auto 0;perspective:1200px}
+    .envelope{position:relative;aspect-ratio:1.55;background:linear-gradient(145deg,#e5c1b4 0%,#c98f8e 55%,#82465b 100%);border:1px solid rgba(74,28,42,.5);border-radius:6px;box-shadow:0 22px 48px rgba(74,28,42,.24),inset 0 1px 0 rgba(255,247,237,.62);isolation:isolate}
+    .envelope:before,.envelope:after{content:"";position:absolute;bottom:0;width:58%;height:1px;background:rgba(74,28,42,.48);z-index:2}
+    .envelope:before{left:0;transform:rotate(32deg);transform-origin:left bottom}
+    .envelope:after{right:0;transform:rotate(-32deg);transform-origin:right bottom}
+    .envelope-letter{position:absolute;left:12%;right:12%;bottom:8%;height:78%;padding:24px 12px;background:linear-gradient(180deg,#fffaf4,#f8e7df);border:1px solid rgba(126,67,72,.4);box-shadow:0 3px 12px rgba(74,28,42,.16),inset 0 0 0 5px rgba(180,138,69,.1);z-index:1}
+    .envelope-letter strong{display:block;font-size:clamp(23px,5vw,34px);font-weight:600;color:#742837}
+    .envelope-letter span{font-size:15px;letter-spacing:.16em;text-transform:uppercase;color:#9c784a}
+    .envelope-flap{position:absolute;inset:0 0 auto;height:64%;background:linear-gradient(155deg,#eed6c8 0%,#d7a5a0 58%,#754258 100%);clip-path:polygon(0 0,100% 0,50% 100%);border-bottom:1px solid rgba(74,28,42,.46);filter:drop-shadow(0 3px 3px rgba(74,28,42,.16));transform-origin:top center;z-index:3}
+    .envelope-seal{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:clamp(76px,9vw,112px);height:clamp(76px,9vw,112px);padding:0;border:0;background:radial-gradient(ellipse at 30% 14%,rgba(255,244,231,.72) 0 3%,rgba(255,208,198,.45) 7%,transparent 23%),radial-gradient(ellipse at 72% 88%,rgba(54,5,11,.48) 0 7%,transparent 28%),radial-gradient(circle at 44% 43%,#bd3b36 0 29%,#9b2528 58%,#68131b 86%,#3b0b13 100%);color:#fff4e2;filter:drop-shadow(0 8px 4px rgba(61,24,18,.26)) drop-shadow(0 2px 1px rgba(45,4,10,.38));clip-path:polygon(50% 0%,58% 3%,65% 1%,72% 5%,79% 4%,84% 10%,91% 11%,92% 18%,98% 23%,96% 31%,100% 38%,97% 46%,100% 53%,96% 61%,98% 69%,92% 75%,91% 83%,84% 85%,79% 92%,71% 91%,64% 97%,56% 94%,49% 100%,42% 95%,34% 98%,28% 93%,20% 94%,17% 86%,10% 83%,10% 75%,3% 69%,5% 61%,0% 53%,4% 45%,1% 37%,6% 30%,3% 22%,10% 17%,11% 10%,19% 9%,25% 4%,33% 5%,40% 1%);font-family:"Noto Serif Bengali","Nirmala UI",serif;font-size:clamp(32px,4.2vw,44px);line-height:1;justify-content:center;gap:0;text-shadow:1px 1px 0 rgba(74,8,14,.72),-1px -1px 0 rgba(255,220,208,.72),0 2px 4px rgba(48,4,10,.36);z-index:4;overflow:hidden}
+    .envelope-seal:before{content:"";position:absolute;inset:8%;border:3px solid rgba(255,226,208,.5);border-right-color:rgba(70,8,13,.52);border-bottom-color:rgba(55,5,11,.68);border-radius:48% 52% 47% 53%;box-shadow:0 0 0 4px rgba(54,5,11,.2),inset 0 3px 2px rgba(255,238,222,.28),inset 0 -4px 4px rgba(45,3,9,.3);pointer-events:none}
+    .envelope-seal:after{content:"";position:absolute;inset:20%;border:2px solid rgba(255,224,207,.36);border-left-color:rgba(70,8,13,.42);border-bottom-color:rgba(52,5,11,.5);border-radius:50%;box-shadow:inset 0 2px 2px rgba(255,235,219,.2),inset 0 -3px 3px rgba(49,4,10,.24);pointer-events:none}
+    .envelope-seal{cursor:pointer;animation:sealPulse 2.4s ease-in-out infinite}
+    .envelope-seal:hover,.envelope-seal:focus-visible{transform:translate(-50%,-50%) scale(1.06);outline:2px solid rgba(180,138,69,.72);outline-offset:5px}
+    @keyframes sealPulse{50%{filter:drop-shadow(0 11px 7px rgba(61,24,18,.34)) drop-shadow(0 0 10px rgba(180,138,69,.32))}}
+    .envelope-hint{margin:clamp(8px,1.5vh,24px) 0 0!important;font-size:clamp(11px,1.8vh,14px)!important;letter-spacing:.15em;text-transform:uppercase;color:var(--gold)!important}
+    .page.active .envelope-flap{animation:envelopeOpen 1.2s .65s cubic-bezier(.2,.7,.2,1) forwards}
+    @keyframes envelopeOpen{to{transform:rotateX(90deg);opacity:.12;z-index:0}}
 
     .hero{min-height:100svh;display:grid;place-items:end center;position:relative;isolation:isolate;background:var(--hero-base);overflow:hidden}
     .hero-bg{position:absolute;inset:-4%;background-position:center 35%;background-size:cover;filter:saturate(.88) contrast(1.02);transform:scale(1.03);animation:kenburns 18s ease-in-out infinite alternate;z-index:-3}
@@ -115,6 +150,7 @@
     .mantra-note{font-size:21px;color:var(--vermillion);max-width:600px;margin:auto;line-height:1.55;font-weight: bold}
 
     .rsvp{text-align:center;padding-bottom:92px}
+    #app > .page{position:absolute}
     .rsvp-box{max-width:760px;margin:32px auto 0;padding:34px;border:1px solid rgba(180,138,69,.45);border-radius:22px;background:#fffaf0}
     .rsvp-people{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 14px;margin-bottom:12px}
     .rsvp-person{font-size:18px;line-height:1.3;color:var(--vermillion);font-weight:600}
@@ -180,16 +216,33 @@
     @media (max-width:700px){
       .music-entry-cue{font-size:11px;bottom:14px;padding:8px 12px}
       .seal{top:-60px}
-      .section{padding:62px 18px}.hero{min-height:92svh}.hero:before{inset:10px;border-radius:180px 180px 36px 36px/90px 90px 30px 30px}
+      .section{padding:62px 18px}.hero{min-height:100%}.hero:before{inset:10px;border-radius:180px 180px 36px 36px/90px 90px 30px 30px}
+      .envelope-intro{padding:clamp(10px,3vh,30px) 14px 16px}.envelope-wrap{width:min(94vw,max(240px,calc((100dvh - 260px) * 1.55)));max-height:100%;margin-top:clamp(8px,2vh,16px)}.envelope-letter{padding:18px 8px}.envelope-intro p{font-size:clamp(16px,2.5vh,18px)}
       .hero-bg{background-position:58% center}.family-grid{grid-template-columns:1fr;gap:22px}.weds-mark{transform:rotate(90deg);height:18px;line-height:18px}
       .event-grid{grid-template-columns:1fr}.event-item{padding:13px}.detail-card{padding:28px 18px}.mantra-card{margin-top:42px;padding:52px 18px 30px;border-radius:90px 90px 22px 22px}.mantra-symbol-row{top:-30px;gap:10px;padding:4px 12px}.mantra-om{font-size:46px;min-width:44px}.mantra-icon{width:38px;height:38px}.share-fab span{display:none}
     }
-    @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+    @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}.page{opacity:0;transform:none}.page.active{opacity:1}}
   </style>
 </head>
 <body>
-  <main id="app">
-    <section class="hero">
+  <main id="app" class="invitation-stage" aria-live="polite">
+    <section class="page envelope-page active" data-page="0" aria-label="Open wedding invitation">
+      <div class="envelope-intro">
+        <div class="eyebrow">A little note for you</div>
+        <h1>Open our invitation</h1>
+        <p>With love, from our families to yours.</p>
+        <div class="envelope-wrap">
+          <div class="envelope">
+            <div class="envelope-letter"><span>Shubho Bibaho</span><strong>Shubhojeet &amp; Tanushree</strong></div>
+            <div class="envelope-flap"></div>
+            <button id="openInvitation" class="envelope-seal" type="button" aria-label="Tap the wax seal to open the wedding invitation" title="Tap the wax seal to open">ॐ</button>
+          </div>
+        </div>
+        <p class="envelope-hint">Tap the wax seal to open</p>
+      </div>
+    </section>
+
+    <section class="page hero" data-page="1" aria-label="Wedding cover page">
       <div id="heroBg" class="hero-bg"></div>
       <div class="seal bn">শুভ<br>বিবাহ</div>
       <div class="hero-copy">
@@ -200,7 +253,7 @@
       <div id="musicEntryCue" class="music-entry-cue">Tap anywhere to enter ✦</div>
     </section>
 
-    <section class="section paper intro">
+    <section class="page section paper intro" data-page="2" aria-label="Family page">
       <svg class="alpana a" viewBox="0 0 200 200" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2"><circle cx="100" cy="100" r="70"/><circle cx="100" cy="100" r="42"/><path d="M100 15c13 22 13 39 0 51-13-12-13-29 0-51Zm85 85c-22 13-39 13-51 0 12-13 29-13 51 0ZM100 185c-13-22-13-39 0-51 13 12 13 29 0 51ZM15 100c22-13 39-13 51 0-12 13-29 13-51 0Z"/><path d="M45 45c25 3 39 13 41 30-18 0-30-10-41-30Zm110 0c-3 25-13 39-30 41 0-18 10-30 30-41Zm0 110c-25-3-39-13-41-30 18 0 30 10 41 30ZM45 155c3-25 13-39 30-41 0 18-10 30-30 41Z"/></g></svg>
       <svg class="alpana b" viewBox="0 0 200 200" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2"><circle cx="100" cy="100" r="70"/><circle cx="100" cy="100" r="42"/><path d="M100 15c13 22 13 39 0 51-13-12-13-29 0-51Zm85 85c-22 13-39 13-51 0 12-13 29-13 51 0ZM100 185c-13-22-13-39 0-51 13 12 13 29 0 51ZM15 100c22-13 39-13 51 0-12 13-29 13-51 0Z"/></g></svg>
       <div class="shell reveal">
@@ -231,7 +284,7 @@
       </div>
     </section>
 
-    <section class="section details">
+    <section class="page section details" data-page="3" aria-label="Wedding details page">
       <div class="shell reveal">
         <div class="eyebrow">বিবাহ অনুষ্ঠান · Wedding Ceremony</div>
         <div class="ornament"><span>✦</span></div>
@@ -253,7 +306,7 @@
       </div>
     </section>
 
-    <section class="section paper mantra">
+    <section class="page section paper mantra" data-page="4" aria-label="Blessing page">
       <div class="shell reveal">
         <div class="eyebrow">মঙ্গল মন্ত্র · Blessing</div>
         <div class="ornament"><span>❈</span></div>
@@ -271,7 +324,7 @@
       </div>
     </section>
 
-    <section class="section paper rsvp">
+    <section class="page section paper rsvp" data-page="5" aria-label="RSVP page">
       <div class="shell reveal">
         <div class="eyebrow">আপনাদের অপেক্ষায় · RSVP</div>
         <div class="ornament"><span>✦</span></div>
@@ -286,6 +339,12 @@
     </section>
   </main>
   <footer>শুভ বিবাহ · Shubho Bibaho</footer>
+
+  <nav class="page-nav" aria-label="Invitation pages">
+    <button id="previousPage" type="button" aria-label="Previous page">‹</button>
+    <div id="pageDots" class="page-dots"></div>
+    <button id="nextPage" type="button" aria-label="Next page">›</button>
+  </nav>
 
   <!-- Background wedding music. Source/volume/loop are configured in config.js. -->
   <audio id="weddingMusic" preload="auto"></audio>
@@ -383,6 +442,8 @@
           return false;
         }
       };
+
+      window.startWeddingMusic = playMusic;
 
       // Music button remains available as pause/resume after entry.
       btn.addEventListener('click', async (event) => {
@@ -574,8 +635,69 @@
       else { try{await navigator.clipboard.writeText(`${data.text}\n${data.url}`);toast('Invitation link copied')}catch(e){toast('Use your browser Share menu')} }
     });
 
-    const io = new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.16});
-    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+    const pages = [...document.querySelectorAll('.page')];
+    const dots = $('pageDots');
+    const previousPage = $('previousPage');
+    const nextPage = $('nextPage');
+    let currentPage = 0;
+    let pageTimer;
+    let isPagePaused = false;
+    const pageDelay = 15000;
+
+    pages.forEach((page, index) => {
+      const dot = document.createElement('button');
+      dot.className = 'page-dot';
+      dot.type = 'button';
+      dot.setAttribute('aria-label', `Go to invitation page ${index + 1}`);
+      dot.addEventListener('click', () => showPage(index));
+      dots.appendChild(dot);
+    });
+
+    function showPage(index, direction = 1){
+      currentPage = Math.max(0, Math.min(pages.length - 1, index));
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+      pages.forEach((page, pageIndex) => {
+        page.classList.toggle('active', pageIndex === currentPage);
+        page.classList.remove('previous');
+        if(pageIndex === currentPage) page.scrollTop = 0;
+        page.querySelectorAll('.reveal').forEach(reveal => reveal.classList.toggle('in', pageIndex === currentPage));
+      });
+      [...dots.children].forEach((dot, dotIndex) => dot.classList.toggle('active', dotIndex === currentPage));
+      previousPage.disabled = currentPage === 0;
+      nextPage.disabled = currentPage === pages.length - 1;
+      resetPageTimer();
+    }
+
+    function resetPageTimer(){
+      clearTimeout(pageTimer);
+      if(isPagePaused || currentPage === pages.length - 1 || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      pageTimer = setTimeout(async () => {
+        if(window.startWeddingMusic) await window.startWeddingMusic();
+        showPage(currentPage + 1);
+      }, pageDelay);
+    }
+
+    previousPage.addEventListener('click', () => showPage(currentPage - 1, -1));
+    nextPage.addEventListener('click', () => showPage(currentPage + 1));
+    pages.forEach(page => {
+      page.addEventListener('touchstart', () => { isPagePaused = true; clearTimeout(pageTimer); }, { passive: true });
+      page.addEventListener('touchend', () => { isPagePaused = false; resetPageTimer(); }, { passive: true });
+    });
+
+    let touchStartX = 0;
+    document.addEventListener('touchstart', event => { touchStartX = event.changedTouches[0].screenX; }, { passive: true });
+    document.addEventListener('touchend', event => {
+      const distance = event.changedTouches[0].screenX - touchStartX;
+      if(Math.abs(distance) < 55) return;
+      showPage(currentPage + (distance < 0 ? 1 : -1), distance < 0 ? 1 : -1);
+    }, { passive: true });
+
+    $('openInvitation').addEventListener('click', async () => {
+      if(window.startWeddingMusic) await window.startWeddingMusic();
+      showPage(1);
+    });
+    showPage(0);
 
     // Gentle falling petals; disabled for reduced-motion users.
     if(!matchMedia('(prefers-reduced-motion: reduce)').matches){
