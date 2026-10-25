@@ -58,6 +58,11 @@ window.WEDDING_CONFIG = {
         phone: "+91XXXXXXXXXX",
       },
       {
+        name: "Mansi Agarwal",
+        relation: "(Sister)",
+        phone: "+91XXXXXXXXXX",
+      },
+      {
         name: "Aditi Bhattacharya",
         relation: "(Sister)",
         phone: "+91XXXXXXXXXX",
@@ -78,6 +83,11 @@ window.WEDDING_CONFIG = {
         phone: "+91XXXXXXXXXX",
       },
       {
+        name: "Indroneel Roy",
+        relation: "(Brother)",
+        phone: "+91XXXXXXXXXX",
+      },
+      {
         name: "Aditya Bhattacharya",
         relation: "(Brother)",
         phone: "+91XXXXXXXXXX",
@@ -88,12 +98,7 @@ window.WEDDING_CONFIG = {
         phone: "+91XXXXXXXXXX",
       },
       {
-        name: "Akash Basu",
-        relation: "(Brother)",
-        phone: "+91XXXXXXXXXX",
-      },
-      {
-        name: "Indroneel Roy",
+        name: "Umang Agarwal",
         relation: "(Brother)",
         phone: "+91XXXXXXXXXX",
       },
@@ -103,12 +108,21 @@ window.WEDDING_CONFIG = {
         phone: "+91XXXXXXXXXX",
       },
       {
+        name: "Akash Basu",
+        relation: "(Brother)",
+        phone: "+91XXXXXXXXXX",
+      },
+      {
+        name: "Aaradhya Paul",
+        relation: "(Brother)",
+        phone: "+91XXXXXXXXXX",
+      },
+      {
         name: "Mira Ghosh",
         relation: "(Sister)",
         phone: "+91XXXXXXXXXX",
       },
     ],
-
     message: "Kindly confirm your presence with the family.",
   },
 
